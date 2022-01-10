@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zUG-BF-qLH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FriendsVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FriendsVC" customModule="FriendsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="My2-yz-zqz">
+                                <rect key="frame" x="0.0" y="161" width="414" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zLB-dl-FEj">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UvI-3L-oV1">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zWt-C6-4TB">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="pkb-M2-KQQ" kind="show" identifier="showDetail" id="dOw-uC-FLg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="5LR-mO-ZBc">
+                                <rect key="frame" x="15" y="110" width="384" height="31"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="xu1-4k-b0J">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
+                                        <segments>
+                                            <segment title="Age"/>
+                                            <segment title="Update"/>
+                                            <segment title="Gender"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="wOh-AV-Qxb"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-KN-Mcx">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="0.0"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Ib-hs-NCh">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="1"/>
+                                                <segments>
+                                                    <segment title="Increase"/>
+                                                    <segment title="Decrease"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="ageSegmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="sPY-Ih-Fx5"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-KI-Abj">
+                                                <rect key="frame" x="202" y="0.0" width="182" height="1"/>
+                                                <segments>
+                                                    <segment title="Female"/>
+                                                    <segment title="Male"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="genderSegmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="U3Z-eL-PW4"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9Ib-hs-NCh" firstAttribute="width" secondItem="e0r-KI-Abj" secondAttribute="width" id="Y5e-LM-nsP"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="edF-9q-v3s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5LR-mO-ZBc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="94f-en-ojc"/>
+                            <constraint firstItem="edF-9q-v3s" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Vr-Op-0JQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5LR-mO-ZBc" secondAttribute="trailing" constant="15" id="D6v-4P-E6A"/>
+                            <constraint firstItem="My2-yz-zqz" firstAttribute="top" secondItem="5LR-mO-ZBc" secondAttribute="bottom" constant="20" id="PbB-Bc-y3Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="My2-yz-zqz" secondAttribute="trailing" id="QQa-l8-EMc"/>
+                            <constraint firstItem="edF-9q-v3s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y1h-ct-WNq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="My2-yz-zqz" secondAttribute="bottom" id="YSu-vL-haH"/>
+                            <constraint firstItem="5LR-mO-ZBc" firstAttribute="top" secondItem="edF-9q-v3s" secondAttribute="bottom" constant="10" id="dzl-wm-vbT"/>
+                            <constraint firstItem="edF-9q-v3s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oEz-VN-3oB"/>
+                            <constraint firstItem="My2-yz-zqz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v3j-hT-KNQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2fh-p7-Ecx"/>
+                    <connections>
+                        <outlet property="ageSegmentControl" destination="9Ib-hs-NCh" id="ZX8-NG-E7s"/>
+                        <outlet property="collectionView" destination="My2-yz-zqz" id="48i-bw-o4d"/>
+                        <outlet property="genderSegmentControl" destination="e0r-KI-Abj" id="bqm-Zd-4Tc"/>
+                        <outlet property="searchBar" destination="edF-9q-v3s" id="i7d-xU-Huw"/>
+                        <outlet property="segmentedControl" destination="xu1-4k-b0J" id="aVI-E7-ezY"/>
+                        <outlet property="stackView" destination="fLd-KN-Mcx" id="YzY-fM-m6p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="86.383928571428569"/>
+        </scene>
+        <!--UserVC-->
+        <scene sceneID="VaQ-IH-H0W">
+            <objects>
+                <viewController id="pkb-M2-KQQ" customClass="UserVC" customModule="FriendsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xxo-lr-xz7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-D7-lMf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="ouW-Mf-sRj">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="JSM-e8-nU4">
+                                            <connections>
+                                                <action selector="backNavigationBarItem:" destination="pkb-M2-KQQ" id="MBF-pH-6nj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u0D-zK-VyS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UdR-YG-hd1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u0D-zK-VyS" firstAttribute="leading" secondItem="UdR-YG-hd1" secondAttribute="leading" id="1fp-gq-X0X"/>
+                            <constraint firstItem="Bak-D7-lMf" firstAttribute="trailing" secondItem="UdR-YG-hd1" secondAttribute="trailing" id="4Ak-dE-ir9"/>
+                            <constraint firstItem="UdR-YG-hd1" firstAttribute="bottom" secondItem="u0D-zK-VyS" secondAttribute="bottom" id="7MN-KR-J0c"/>
+                            <constraint firstItem="Bak-D7-lMf" firstAttribute="leading" secondItem="UdR-YG-hd1" secondAttribute="leading" id="OKp-wi-dOL"/>
+                            <constraint firstItem="Bak-D7-lMf" firstAttribute="top" secondItem="UdR-YG-hd1" secondAttribute="top" id="bm5-Ef-1dp"/>
+                            <constraint firstItem="u0D-zK-VyS" firstAttribute="trailing" secondItem="UdR-YG-hd1" secondAttribute="trailing" id="cz9-Y0-Hkn"/>
+                            <constraint firstItem="u0D-zK-VyS" firstAttribute="top" secondItem="Bak-D7-lMf" secondAttribute="bottom" id="qRu-ec-jHY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FaN-xd-IMH"/>
+                    <connections>
+                        <outlet property="tableView" destination="u0D-zK-VyS" id="U7m-Fa-W8J"/>
+                        <outlet property="titleNavigationItem" destination="ouW-Mf-sRj" id="4rQ-Ik-1Gi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UA3-pY-L3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.9565217391305" y="85.714285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3OR-NR-HCL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zUG-BF-qLH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xfy-PH-0ko">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nlg-7M-eVo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRD-sg-QYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="86.383928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
